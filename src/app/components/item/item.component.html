@@ -1,5 +1,5 @@
 <mat-card class="mat-card">
-  <img [src]="item.thumbnail" class="img">
-  <p class="product-name">{{item.title}}</p>
-  <p class="product-price">{{item.price | currency}}$</p>
+  <img [src]="item?.thumbnail" class="img">
+  <p class="product-name">{{item?.title}}</p>
+  <p class="product-price">{{item?.price | currency}}$</p>
 </mat-card>

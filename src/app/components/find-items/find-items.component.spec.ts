@@ -1,5 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatCardModule } from '@angular/material/card';
 
+import { ItemComponent } from '../item/item.component';
 import { FindItemsComponent } from './find-items.component';
 
 describe('FindItemsComponent', () => {
@@ -8,9 +12,9 @@ describe('FindItemsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FindItemsComponent ]
-    })
-    .compileComponents();
+      declarations: [FindItemsComponent, ItemComponent],
+      imports: [MatCardModule, FormsModule, HttpClientTestingModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
