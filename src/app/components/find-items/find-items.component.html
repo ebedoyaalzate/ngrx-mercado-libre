@@ -1,0 +1,8 @@
+<div class="container">
+  <input [(ngModel)]="searchText"  placeholder="Ingrese un producto" class="input-form"/>
+  <button (click)="findItems()" class="form-button submit-button">Buscar</button>
+</div>
+
+<div class="products" *ngIf="products">
+  <app-item *ngFor="let prod of products" [item]="prod"></app-item>
+</div> 

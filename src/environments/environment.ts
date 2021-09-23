@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  userApi: 'https://books-training-rails.herokuapp.com/',
+  mercadolibreApi: 'https://api.mercadolibre.com/'
 };
 
 /*

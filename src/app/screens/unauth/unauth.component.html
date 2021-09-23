@@ -1,0 +1,17 @@
+<mat-card class="mat-card">
+  <form (ngSubmit)="signIn()" [formGroup]="loginForm" class="form-general">
+
+    <div class="form-section">
+      <label  class="form-label">
+        Username
+      </label>
+      <input class="input-form" formControlName="email">
+      <label  class="form-label">
+        Password
+      </label>
+      <input type="password" class="input-form" formControlName="password">
+    </div>
+
+    <button class="form-button submit-button" type="submit" id="login">Login</button>
+  </form>
+</mat-card>
