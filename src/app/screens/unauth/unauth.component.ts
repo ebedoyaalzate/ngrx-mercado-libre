@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SessionService } from 'src/app/services/session.service';
+
+import { SessionService } from '../../services/session.service';
 import { UserService } from '../../services/user.service';
 
 @Component({

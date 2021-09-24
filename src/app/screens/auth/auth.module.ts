@@ -9,6 +9,7 @@ import { FavoritesComponent } from 'src/app/components/favorites/favorites.compo
 import { ProfileComponent } from 'src/app/components/profile/profile.component'
 import { ItemComponent } from 'src/app/components/item/item.component';
 import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     AuthRoutingModule,
     MatSidenavModule,
+    MatCardModule,
     FormsModule
   ],
   exports: [AuthComponent],
