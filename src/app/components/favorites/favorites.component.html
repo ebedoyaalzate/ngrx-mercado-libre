@@ -1,1 +1,3 @@
-<p>favorites works!</p>
+<div class="products" *ngIf="products">
+  <app-item *ngFor="let prod of products" [item]="prod"></app-item>
+</div> 
