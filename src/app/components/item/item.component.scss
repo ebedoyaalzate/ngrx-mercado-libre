@@ -1,4 +1,4 @@
-$cerulean: #00ADEE;
+@import '../../../styles/colors.scss';
 
 .mat-card {
   margin: 20px;
@@ -11,11 +11,6 @@ $cerulean: #00ADEE;
   box-shadow: 5px 5px 5px 0px gray;
   align-items: center;
   transition: all 0,6s linear;
-
-  &:hover {
-    box-shadow: 0 0 0 0 white;
-    transform: scale(1.1, 1.1);
-  }
 
   .product-price {
     color: $cerulean;
@@ -55,5 +50,11 @@ $cerulean: #00ADEE;
     height: 150px;
     margin-bottom: 5px;
     width: 150px;
+  }
+
+  .icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
   }
 }
