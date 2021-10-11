@@ -10,6 +10,7 @@ import { ProfileComponent } from 'src/app/components/profile/profile.component'
 import { ItemComponent } from 'src/app/components/item/item.component';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MatCardModule } from '@angular/material/card';
     AuthRoutingModule,
     MatSidenavModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MatIconModule
   ],
   exports: [AuthComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

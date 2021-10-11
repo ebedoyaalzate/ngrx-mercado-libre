@@ -1,3 +1,4 @@
+import { ItemsService } from './../../services/items.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./favorites.component.scss']
 })
 export class FavoritesComponent implements OnInit {
+  products: any[] = [];
 
-  constructor() { }
+  constructor(
+    private itemsService: ItemsService
+  ) { }
 
   ngOnInit(): void {
+    this.products = this.itemsService.getItems()
   }
 
 }
