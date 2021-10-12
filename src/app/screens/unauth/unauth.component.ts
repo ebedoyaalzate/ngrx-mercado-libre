@@ -13,8 +13,8 @@ import { UserService } from '../../services/user/user.service';
 })
 export class UnauthComponent implements OnInit {
   credentials: UserCredentials = {
-    email: 'julian.lopera@accenture.com',
-    password: 'Contraseña1',
+    email: 'homero.simpson@wolox.com',
+    password: 'Homero123',
   };
 
   loginForm: FormGroup = this.formBuilder.group({
@@ -30,6 +30,6 @@ export class UnauthComponent implements OnInit {
   ngOnInit(): void {}
 
   signIn(): void {
-    this.userService.login(this.loginForm.value).subscribe((_) => console.log);
+    this.userService.login(this.loginForm.value).subscribe(console.log);
   }
 }

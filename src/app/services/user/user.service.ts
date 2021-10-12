@@ -2,21 +2,22 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { environment } from '../../../environments/environment';
 import { UserPayload, UserCredentials } from './user-payloads';
-import { map } from 'rxjs/operators';
+import { httpOptions } from '../../shared/http-options';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private readonly apiUrl = `${environment.userApi}api/v1/users`;
+  private usersUrl = 'api/users';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   login(credentials: UserCredentials): Observable<UserPayload> {
-    return this.http
-      .post<{ data: UserPayload }>(`${this.apiUrl}/sign_in`, credentials)
-      .pipe(map((event: { data: UserPayload }) => event.data));
+    return this.http.post<UserPayload>(`${this.usersUrl}/login`, credentials, httpOptions);
+  }
+
+  listUsers(): Observable<UserPayload[]> {
+    return this.http.get<UserPayload[]>(this.usersUrl, httpOptions);
   }
 }

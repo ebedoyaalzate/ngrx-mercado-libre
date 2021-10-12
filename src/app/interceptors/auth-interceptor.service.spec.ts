@@ -25,8 +25,7 @@ describe('AuthInterceptorService', () => {
           provide: HTTP_INTERCEPTORS,
           useClass: AuthInterceptorService,
           multi: true,
-        },
-        // { provide: SessionService, useClass: MockSessionService },
+        }
       ],
     });
 
