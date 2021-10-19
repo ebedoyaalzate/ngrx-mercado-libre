@@ -1,42 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 
-import { SessionService } from '../../services/session.service';
-import { UserService } from '../../services/user.service';
+import {
+  UserCredentials,
+} from '../../services/user/user-payloads';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-unauth',
   templateUrl: './unauth.component.html',
-  styleUrls: ['./unauth.component.scss']
+  styleUrls: ['./unauth.component.scss'],
 })
 export class UnauthComponent implements OnInit {
+  credentials: UserCredentials = {
+    email: 'homero.simpson@wolox.com',
+    password: 'Homero123',
+  };
 
   loginForm: FormGroup = this.formBuilder.group({
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', Validators.required]
+    email: [this.credentials.email, [Validators.required, Validators.email]],
+    password: [this.credentials.password, Validators.required],
   });
 
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService,
-    private router: Router,
-    private sessionService: SessionService,
-  ) { }
+    private userService: UserService
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   signIn(): void {
-    this.userService.login(this.loginForm.value).subscribe (res => {
-      console.log(res)
-      const sessionData = {
-        token: res.headers.get('access-token'),
-        client: res.headers.get('client'),
-        uid: res.headers.get('uid')
-      };
-      this.sessionService.saveSessionData(sessionData);
-      this.router.navigate(['home'])
-    })
+    this.userService.login(this.loginForm.value).subscribe(console.log);
   }
 }
