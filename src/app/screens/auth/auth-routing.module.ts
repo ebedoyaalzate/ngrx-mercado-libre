@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AuthComponent } from './auth.component';
-import { FindItemsComponent } from '../../components/find-items/find-items.component';
 import { FavoritesComponent } from '../../components/favorites/favorites.component';
 import { ProfileComponent } from '../../components/profile/profile.component';
+import { ProductsComponent } from '../../components/products/products.component';
 
 const routes: Routes = [
   {
@@ -12,8 +12,8 @@ const routes: Routes = [
     component: AuthComponent,
     children: [
       {
-        path: 'find',
-        component: FindItemsComponent
+        path: 'products',
+        component: ProductsComponent
       },
       {
         path: 'favorites',

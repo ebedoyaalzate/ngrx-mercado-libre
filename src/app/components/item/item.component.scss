@@ -1,60 +1,60 @@
-@import '../../../styles/colors.scss';
+// @use 'colors';
 
-.mat-card {
-  margin: 20px;
-  height: 320px;
-  width: 200px;
-  padding: 10px;
-  display: grid;
-  border: 1px solid gray;
-  grid-template-rows: 1,5fr 1fr 1fr 1fr;
-  box-shadow: 5px 5px 5px 0px gray;
-  align-items: center;
-  transition: all 0,6s linear;
+// .mat-card {
+//   margin: 20px;
+//   height: 320px;
+//   width: 200px;
+//   padding: 10px;
+//   display: grid;
+//   border: 1px solid gray;
+//   grid-template-rows: 1,5fr 1fr 1fr 1fr;
+//   box-shadow: 5px 5px 5px 0px gray;
+//   align-items: center;
+//   transition: all 0,6s linear;
 
-  .product-price {
-    color: $cerulean;
-    font-size: 20px;
-    font-weight: bold;
-    justify-self: center;
-    text-align: center;
-  }
+//   .product-price {
+//     color: $cerulean;
+//     font-size: 20px;
+//     font-weight: bold;
+//     justify-self: center;
+//     text-align: center;
+//   }
 
-  .product-unit {
-    justify-self: center;
-    color: black;
-  }
+//   .product-unit {
+//     justify-self: center;
+//     color: black;
+//   }
 
-  .product-unit-name {
-    justify-self: center;
-    color: black;
-    font-weight: bold;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    width:150px;
-  }
+//   .product-unit-name {
+//     justify-self: center;
+//     color: black;
+//     font-weight: bold;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     width:150px;
+//   }
 
-  .product-name {
-    font-weight: bold;
-    justify-self: center;
-    color: black;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    width:150px;
-  }
+//   .product-name {
+//     font-weight: bold;
+//     justify-self: center;
+//     color: black;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     width:150px;
+//   }
 
-  .img {
-    justify-self: center;
-    height: 150px;
-    margin-bottom: 5px;
-    width: 150px;
-  }
+//   .img {
+//     justify-self: center;
+//     height: 150px;
+//     margin-bottom: 5px;
+//     width: 150px;
+//   }
 
-  .icon {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-  }
-}
+//   .icon {
+//     position: absolute;
+//     right: 5px;
+//     top: 5px;
+//   }
+// }

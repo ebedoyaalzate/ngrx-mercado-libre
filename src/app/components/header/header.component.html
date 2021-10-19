@@ -1,16 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle"
-        aria-label="Toggle navigation" (click)="toggleMenu()" [attr.aria-expanded]="isCollapsed">
-        <span class="navbar-toggler-icon"></span>
+<mat-toolbar color="primary">
+  <div fxLayout class="w-100" fxLayoutAlign="start center">
+    <span class="mr-3">Mercado libre</span>
+    <ng-container *ngFor="let category of categories">
+      <button class="ml-3" mat-button (click)="redirect(category.path)">
+        {{ category.name }}
+      </button>
+    </ng-container>
+    <span fxFlex></span>
+    <button
+      mat-icon-button
+      aria-label="User config icon-button"
+      [matMenuTriggerFor]="menu"
+    >
+      <mat-icon>account_circle</mat-icon>
     </button>
-    <a class="navbar-brand" href="home">Mercado Libre</a>
-    <div class="collapse navbar-collapse" id="navbarToggle" [class.show]="isCollapsed">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0 bg-light">
-        <li class="nav-item" *ngFor="let category of categories">
-          <a class="nav-link" (click)="redirect(category.path)" >{{category.name}}</a>
-        </li>
-      </ul>
-    </div>
+  </div>
+</mat-toolbar>
 
-</nav>
+
+<mat-menu #menu="matMenu" class="ta-task-menu">
+  <button mat-menu-item>Perfil</button>
+  <button mat-menu-item (click)="redirect('')">Cerrar sesión</button>
+</mat-menu>

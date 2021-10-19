@@ -6,7 +6,6 @@ import {
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './auth-interceptor.service';
 import { environment } from '../../environments/environment';
-import { SessionService } from '../services/session.service';
 
 const singInURL = `${environment.userApi}api/v1/users/sign_in`;
 

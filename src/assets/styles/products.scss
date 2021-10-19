@@ -1,0 +1,25 @@
+@use 'variables' as vars;
+
+
+.no-product-list {
+  display: flex;
+  width: 100%;
+  height: vars.$content-small;
+  align-items: center;
+  justify-content: center;
+  color: vars.$gray;
+  background-color: vars.$wild-sand-solid;
+}
+
+.products {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(vars.$content-small, 1fr));
+    grid-gap: 20px;
+    align-items: stretch;
+  }
+
+  // &__card {
+  //   min-width: vars.$content-small;
+  // }
+}

@@ -5,9 +5,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { FavoritesComponent } from '../../components/favorites/favorites.component';
-import { FindItemsComponent } from '../../components/find-items/find-items.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { ItemComponent } from '../../components/item/item.component';
+import { ProductsComponent } from '../../components/products/products.component';
 import { ProfileComponent } from '../../components/profile/profile.component';
 import { AuthComponent } from './auth.component';
 
@@ -20,7 +20,7 @@ describe('AuthComponent', () => {
       declarations: [
         AuthComponent,
         HeaderComponent,
-        FindItemsComponent,
+        ProductsComponent,
         FavoritesComponent,
         ProfileComponent,
         ItemComponent,

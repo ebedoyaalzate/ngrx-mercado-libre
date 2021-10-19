@@ -1,0 +1,51 @@
+@use '~@angular/material'as mat;
+
+$dark-primary-text: rgba(black, 0.9);
+$light-primary-text: #ffffff;
+$contrast: (50: $dark-primary-text,
+100: $dark-primary-text,
+200: $dark-primary-text,
+300: $dark-primary-text,
+400: $dark-primary-text,
+500: $dark-primary-text,
+600: $dark-primary-text,
+700: $dark-primary-text,
+800: $dark-primary-text,
+900: $light-primary-text,
+A100: $dark-primary-text,
+A200: $dark-primary-text,
+A400: $dark-primary-text,
+A700: $dark-primary-text,
+);
+
+// https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=FBC02D
+$hues-primary: (50: #FFFDE7,
+  100: #FFF9C4,
+  200: #FFF59D,
+  300: #FFF176,
+  400: #FFEE58,
+  500: #FFEB3B,
+  600: #FDD835,
+  700: #FBC02D,
+  800: #F9A825,
+  900: #F57F17,
+  A100: #FFFF8D,
+  A200: #FFFF00,
+  A400: #FFEA00,
+  A700: #FFD600,
+  contrast: $contrast);
+
+$primary-palette: mat.define-palette($hues-primary, 700, 600, 800);
+$accent-palette: mat.define-palette(mat.$blue-palette, 700, 600, 800);
+$warn-palette: mat.define-palette(mat.$red-palette);
+
+$primary: mat.get-color-from-palette($primary-palette);
+$primary-dark: #C49000;
+$primary-light: #fff263;
+$accent: mat.get-color-from-palette($accent-palette);
+$warn: mat.get-color-from-palette($warn-palette);
+
+
+@include mat.core();
+$my-theme: mat.define-light-theme($primary-palette, $accent-palette, $warn-palette);
+@include mat.all-component-themes($my-theme);
