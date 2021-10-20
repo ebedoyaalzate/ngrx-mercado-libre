@@ -1,22 +1,8 @@
 <section [ngClass]="{ 'products__container': hasProducts}">
   <ng-container *ngIf="hasProducts; else noProducts">
-    <mat-card class="products__card" *ngFor="let product of products">
-      <mat-card-title>
-        <img mat-card-image [src]="product?.thumbnail" alt="Product thumbnail">
-      </mat-card-title>
-      <mat-card-content>
-        <h3>{{product?.title}}</h3>
-        <span>{{product?.price | currency}}$</span>
-      </mat-card-content>
-      <mat-card-actions fxLayout fxLayoutAlign="end center">
-        <button mat-icon-button *ngIf="!product?.isSelected" (click)="selectProduct()">
-          <mat-icon>favorite_border</mat-icon>
-        </button>
-        <button mat-icon-button *ngIf="product?.isSelected" (click)="selectProduct()">
-          <mat-icon>favorite</mat-icon>
-        </button>
-      </mat-card-actions>
-    </mat-card>
+    <ng-container *ngFor="let product of products">
+      <app-product class="products__card" [product]="product"></app-product>
+    </ng-container>
   </ng-container>
 </section>
 

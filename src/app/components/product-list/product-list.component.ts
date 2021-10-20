@@ -13,16 +13,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  selectProduct(): void {
-    // if(!this.item.isSelected) {
-    //   this.itemsService.addToCart(this.item)
-    // } else {
-    //   this.itemsService.deleteItem(this.item)
-    // }
-    // this.item.isSelected = !this.item.isSelected;
-  }
-
   get hasProducts(): boolean {
-    return this.products?.length;
+    return this.products?.length ? true: false;
   }
 }

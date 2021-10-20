@@ -19,7 +19,7 @@
     align-items: stretch;
   }
 
-  // &__card {
-  //   min-width: vars.$content-small;
-  // }
+  &__card {
+    min-width: vars.$content-small;
+  }
 }

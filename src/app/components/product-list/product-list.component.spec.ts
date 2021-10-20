@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockComponents } from 'ng-mocks';
+import { ProductComponent } from '../product/product.component';
 
 import { ProductListComponent } from './product-list.component';
+
 
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
@@ -8,7 +11,8 @@ describe('ProductListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductListComponent ]
+      declarations: [ ProductListComponent, MockComponents(ProductComponent) ],
+
     })
     .compileComponents();
   });

@@ -4,21 +4,21 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+
 import { AuthInterceptorService } from './auth-interceptor.service';
-import { environment } from '../../environments/environment';
+import { DataService } from '../in-memory-db/data.service';
 
-const singInURL = `${environment.userApi}api/v1/users/sign_in`;
+const singInURL = `api/users/login`;
 
-export class MockSessionService {
-  saveSessionData = jest.fn();
-}
 describe('AuthInterceptorService', () => {
   let httpClient: HttpClient;
   let httpController: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, HttpClientInMemoryWebApiModule.forRoot(DataService, { delay: 500, passThruUnknownUrl: true }),
+      ],
       providers: [
         {
           provide: HTTP_INTERCEPTORS,
@@ -36,23 +36,5 @@ describe('AuthInterceptorService', () => {
 
   it('should expect none', () => {
     const req = httpController.expectNone(singInURL);
-  });
-
-
-  it('Test', () => {
-    // GIVEN
-    const session = {
-      uid: 'julian.lopera@accenture.com',
-      client: '0RSlL8fsup0tT-KGNpkitw',
-      token: '19z3UVZhpVJD17z1aybBOA',
-    };
-
-    // WHEN
-    httpClient.post(singInURL, '').subscribe();
-    const error = new ErrorEvent('test error');
-    const req = httpController.expectOne(req => req.method === 'POST' && req.url === singInURL);
-    req.flush({});
-
-    // THEN
   });
 });

@@ -1,3 +1,11 @@
-<div class="products" *ngIf="products">
-  <app-item *ngFor="let prod of products" [item]="prod"></app-item>
-</div> 
+<section class="p-3" [ngClass]="{ 'products__container': hasProducts}">
+  <ng-container *ngIf="hasProducts; else noProducts">
+    <ng-container *ngFor="let product of (products$ | async)">
+      <app-product class="products__card" [product]="product"></app-product>
+    </ng-container>
+  </ng-container>
+</section>
+
+<ng-template #noProducts>
+  <div class="no-product-list p-3">No se han encontrado favoritos</div>
+</ng-template>
