@@ -30,6 +30,9 @@ export class UnauthComponent implements OnInit {
   ngOnInit(): void {}
 
   signIn(): void {
+    if (this.loginForm.invalid) {
+      return;
+    }
     this.userService.login(this.loginForm.value).subscribe(console.log);
   }
 }

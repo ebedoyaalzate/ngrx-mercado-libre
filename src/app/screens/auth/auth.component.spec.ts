@@ -1,13 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { FavoritesComponent } from '../../components/favorites/favorites.component';
-import { FindItemsComponent } from '../../components/find-items/find-items.component';
 import { HeaderComponent } from '../../components/header/header.component';
-import { ItemComponent } from '../../components/item/item.component';
+import { ProductListComponent } from '../../components/product-list/product-list.component';
+import { ProductComponent } from '../../components/product/product.component';
+import { ProductsComponent } from '../../components/products/products.component';
 import { ProfileComponent } from '../../components/profile/profile.component';
 import { AuthComponent } from './auth.component';
 
@@ -20,12 +26,24 @@ describe('AuthComponent', () => {
       declarations: [
         AuthComponent,
         HeaderComponent,
-        FindItemsComponent,
+        ProductsComponent,
         FavoritesComponent,
         ProfileComponent,
-        ItemComponent,
+        ProductListComponent,
+        ProductComponent,
       ],
-      imports: [RouterTestingModule, MatSidenavModule, MatCardModule, FormsModule],
+      imports: [
+        RouterTestingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatToolbarModule,
+        MatCardModule,
+        MatIconModule,
+        MatButtonModule,
+        MatInputModule,
+        MatMenuModule,
+        FlexLayoutModule
+      ],
     }).compileComponents();
   });
 

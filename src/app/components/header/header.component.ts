@@ -10,10 +10,8 @@ import { SessionService } from '../../services/session.service';
 })
 export class HeaderComponent implements OnInit {
   categories = [
-    {name: 'Buscar productos', path: '/home/find'},
-    {name: 'Items seleccionados', path: '/home/favorites'},
-    {name: 'Perfil', path: '/home/profile'},
-    {name: 'Cerrar sesion', path: ''}
+    {name: 'Productos', path: '/home/products'},
+    {name: 'Favoritos', path: '/home/favorites'}
   ]
   isCollapsed = false;
 

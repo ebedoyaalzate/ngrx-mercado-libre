@@ -1,17 +1,27 @@
-<mat-card class="mat-card">
-  <form (ngSubmit)="signIn()" [formGroup]="loginForm" class="form-general">
-
-    <div class="form-section">
-      <label  class="form-label">
-        Username
-      </label>
-      <input class="input-form" formControlName="email">
-      <label  class="form-label">
-        Password
-      </label>
-      <input type="password" class="input-form" formControlName="password">
-    </div>
-
-    <button class="form-button submit-button" type="submit" id="login">Login</button>
-  </form>
-</mat-card>
+<section fxLayout fxLayoutAlign="center center">
+  <mat-card class="login-card">
+    <mat-card-title>Ingresar</mat-card-title>
+    <mat-card-content class="py-3 px-1">
+      <div [formGroup]="loginForm" fxLayout="column">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" required />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" required/>
+        </mat-form-field>
+      </div>
+      <mat-card-actions fxLayout fxLayoutAlign="center center">
+        <button
+          color="primary"
+          mat-raised-button
+          mat-dialog-close
+          (click)="signIn()"
+        >
+          Login
+        </button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+</section>

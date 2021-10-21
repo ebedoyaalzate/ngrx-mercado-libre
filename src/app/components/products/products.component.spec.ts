@@ -2,40 +2,36 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatOptionModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MockComponents } from 'ng-mocks';
+import { ProductListComponent } from '../product-list/product-list.component';
 
-import { UnauthComponent } from './unauth.component';
+import { ProductsComponent } from './products.component';
 
-describe('UnauthComponent', () => {
-  let component: UnauthComponent;
-  let fixture: ComponentFixture<UnauthComponent>;
+describe('ProductsComponent', () => {
+  let component: ProductsComponent;
+  let fixture: ComponentFixture<ProductsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [UnauthComponent],
+      declarations: [ ProductsComponent, MockComponents(ProductListComponent) ],
       imports: [
         FormsModule,
         ReactiveFormsModule,
-        HttpClientTestingModule,
         NoopAnimationsModule,
-        MatCardModule,
-        MatButtonModule,
-        MatFormFieldModule,
+        MatIconModule,
         MatInputModule,
-        MatOptionModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        HttpClientTestingModule
       ]
     })
-      .compileComponents();
+    .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UnauthComponent);
+    fixture = TestBed.createComponent(ProductsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

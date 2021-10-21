@@ -18,7 +18,7 @@ import { DataService } from './in-memory-db/data.service';
     BrowserAnimationsModule,
     HttpClientModule,
     NgxCurrencyModule,
-    HttpClientInMemoryWebApiModule.forRoot(DataService, { delay: 200 } )
+    HttpClientInMemoryWebApiModule.forRoot(DataService, { delay: 500,  passThruUnknownUrl: true} ),
   ],
   providers: [
     {

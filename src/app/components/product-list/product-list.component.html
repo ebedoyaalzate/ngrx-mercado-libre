@@ -1,11 +1,11 @@
-<section class="p-3" [ngClass]="{ 'products__container': hasProducts}">
+<section [ngClass]="{ 'products__container': hasProducts}">
   <ng-container *ngIf="hasProducts; else noProducts">
-    <ng-container *ngFor="let product of (products$ | async)">
+    <ng-container *ngFor="let product of products">
       <app-product class="products__card" [product]="product"></app-product>
     </ng-container>
   </ng-container>
 </section>
 
 <ng-template #noProducts>
-  <div class="no-product-list p-3">No se han encontrado favoritos</div>
+  <div class="no-product-list">No se han encontrado productos</div>
 </ng-template>

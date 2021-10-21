@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-title>
+    <img mat-card-image [src]="product?.thumbnail" alt="Product thumbnail">
+  </mat-card-title>
+  <mat-card-content>
+    <h3>{{product?.title}}</h3>
+    <span>{{product?.price | currency}}$</span>
+  </mat-card-content>
+  <mat-card-actions fxLayout fxLayoutAlign="end center">
+    <button mat-icon-button *ngIf="!product?.isSelected" (click)="selectProduct()">
+      <mat-icon>favorite_border</mat-icon>
+    </button>
+    <button mat-icon-button *ngIf="product?.isSelected" (click)="selectProduct()">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

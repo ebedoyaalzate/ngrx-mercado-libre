@@ -1,0 +1,18 @@
+@use 'variables' as vars;
+@each $a, $p in (m: margin, p: padding) {
+  @each $n, $v in vars.$spacers {
+    .#{$a}-#{$n} { #{$p}: $v !important; }
+    .#{$a}t-#{$n} { #{$p}-top: $v !important; }
+    .#{$a}r-#{$n} { #{$p}-right: $v !important; }
+    .#{$a}l-#{$n} { #{$p}-left: $v !important; }
+    .#{$a}b-#{$n} { #{$p}-bottom: $v !important; }
+    .#{$a}x-#{$n} {
+      #{$p}-left: $v !important;
+      #{$p}-right: $v !important;
+    }
+    .#{$a}y-#{$n} {
+      #{$p}-top: $v !important;
+      #{$p}-bottom: $v !important;
+    }
+  }
+}
