@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
 import { DataService } from './in-memory-db/data.service';
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from './store/reducers/app.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +21,7 @@ import { DataService } from './in-memory-db/data.service';
     HttpClientModule,
     NgxCurrencyModule,
     HttpClientInMemoryWebApiModule.forRoot(DataService, { delay: 500,  passThruUnknownUrl: true} ),
+    StoreModule.forRoot(appReducers),
   ],
   providers: [
     {
