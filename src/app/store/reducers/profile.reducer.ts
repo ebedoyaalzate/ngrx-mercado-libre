@@ -1,4 +1,4 @@
-import { initialProfileState } from './../state/profile.state';
+import { initialProfileState } from '../state/profile.state';
 import { Action, createReducer, on } from "@ngrx/store";
 import { createLogin, deleteLogin } from '../actions/profile.actions';
 import { UserPayload } from 'src/app/services/user/user-payloads';

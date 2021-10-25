@@ -1,15 +1,18 @@
 import { UserPayload } from 'src/app/services/user/user-payloads';
 import { initialFavoriteState, FavoritesState } from './favorites.state';
 import { initialProfileState } from './profile.state';
+import { initialSearchState, SearchState } from './search.state';
 
 export interface AppState {
   favorites: FavoritesState[];
   profile: UserPayload | undefined;
+  search: SearchState
 }
 
 export const initialAppState: AppState = {
   favorites: initialFavoriteState,
-  profile: initialProfileState
+  profile: initialProfileState,
+  search: initialSearchState,
 };
 
 export const getInitialState = () => {
