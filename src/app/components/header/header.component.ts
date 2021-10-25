@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { selectProfileName } from 'src/app/store/selectors/profile.selectors';
+import { AppState } from 'src/app/store/state/app.state';
 
 import { SessionService } from '../../services/session.service';
 
@@ -8,19 +12,20 @@ import { SessionService } from '../../services/session.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   categories = [
     {name: 'Productos', path: '/home/products'},
     {name: 'Favoritos', path: '/home/favorites'}
   ]
   isCollapsed = false;
+  userName: Observable<string | undefined>;
 
   constructor(
     private router: Router,
     private sessionService: SessionService,
-  ) { }
-
-  ngOnInit(): void {
+    private store: Store<AppState>,
+  ) { 
+    this.userName = this.store.select(selectProfileName)
   }
 
   toggleMenu(){
