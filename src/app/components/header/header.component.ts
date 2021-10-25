@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { deleteLogin } from 'src/app/store/actions/profile.actions';
 import { selectProfileName } from 'src/app/store/selectors/profile.selectors';
 import { AppState } from 'src/app/store/state/app.state';
 
@@ -37,6 +38,7 @@ export class HeaderComponent {
       this.sessionService.removeToken()
     }
     this.toggleMenu();
+    this.store.dispatch(deleteLogin())
     this.router.navigate([to]);
   }
 }
