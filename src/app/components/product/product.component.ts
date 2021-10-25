@@ -35,6 +35,9 @@ export class ProductComponent implements OnInit {
       // this.itemsService.deleteItem(this.product)
       this.store.dispatch(deleteFavorite({product}));
     }
-    this.product.isSelected = !this.product.isSelected;
+    this.product = {
+      ...this.product,
+      isSelected: !this.product.isSelected,
+    }
   }
 }
