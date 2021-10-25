@@ -11,6 +11,7 @@ import { AuthInterceptorService } from './interceptors/auth-interceptor.service'
 import { DataService } from './in-memory-db/data.service';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './store/reducers/app.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,10 @@ import { appReducers } from './store/reducers/app.reducer';
     NgxCurrencyModule,
     HttpClientInMemoryWebApiModule.forRoot(DataService, { delay: 500,  passThruUnknownUrl: true} ),
     StoreModule.forRoot(appReducers),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+    }),
+
   ],
   providers: [
     {
