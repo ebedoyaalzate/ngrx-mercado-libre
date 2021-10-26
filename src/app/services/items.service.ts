@@ -19,7 +19,7 @@ export class ItemsService {
   }
 
   hasItems(): boolean {
-    return this.itemsBehaviorSubject.value?.length ? true : false;
+    return !!this.itemsBehaviorSubject.value?.length;
   }
 
   clearCart() {

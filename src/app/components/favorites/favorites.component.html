@@ -1,5 +1,5 @@
-<section class="p-3" [ngClass]="{ 'products__container': hasProducts}">
-  <ng-container *ngIf="hasProducts; else noProducts">
+<section class="p-3" [ngClass]="{ 'products__container': hasProducts | async}">
+  <ng-container *ngIf="hasProducts | async; else noProducts">
     <ng-container *ngFor="let product of (products$ | async)">
       <app-product class="products__card" [product]="product"></app-product>
     </ng-container>
