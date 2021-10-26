@@ -10,7 +10,7 @@ import { MercadolibreService } from '../../services/mercado-libre.service';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent{
+export class ProductsComponent {
   products: any;
   searchText = '';
 
@@ -20,12 +20,12 @@ export class ProductsComponent{
   ) { }
 
   ngOnInit(): void {
-  this.store.select(selectSearch).subscribe(res => {
-    if(res) {
-      this.searchText = res.query
-      this.products = res.items
-    }
-  })
+    this.store.select(selectSearch).subscribe(res => {
+      if (res) {
+        this.searchText = res.query
+        this.products = res.items
+      }
+    })
   }
 
   findProducts(): void {
@@ -33,6 +33,6 @@ export class ProductsComponent{
       this.products = res.results;
     }) */
 
-    this.store.dispatch(searchItems({query: this.searchText}))
+    this.store.dispatch(searchItems({ query: this.searchText }))
   }
 }

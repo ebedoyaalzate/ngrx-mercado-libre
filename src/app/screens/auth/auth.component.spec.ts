@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterTestingModule } from '@angular/router/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 
 import { FavoritesComponent } from '../../components/favorites/favorites.component';
 import { HeaderComponent } from '../../components/header/header.component';
@@ -44,6 +45,7 @@ describe('AuthComponent', () => {
         MatMenuModule,
         FlexLayoutModule
       ],
+      providers: [provideMockStore()]
     }).compileComponents();
   });
 

@@ -12,8 +12,9 @@ import { DataService } from './in-memory-db/data.service';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './store/reducers/app.reducer';
 import { EffectsModule } from '@ngrx/effects';
-import { SearchEffect } from './store/effects/search.effects';
+import { SearchEffects } from './store/effects/search.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ProfileEffects } from './store/effects/profile.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +26,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     NgxCurrencyModule,
     HttpClientInMemoryWebApiModule.forRoot(DataService, { delay: 500,  passThruUnknownUrl: true} ),
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([SearchEffect]),
+    EffectsModule.forRoot([SearchEffects, ProfileEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
     }),

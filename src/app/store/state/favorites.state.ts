@@ -3,7 +3,7 @@ export interface FavoritesState {
   thumbnail: string;
   title: string;
   price: number;
-  isSelected: boolean;
+  isSelected?: boolean;
 };
 
 export const initialFavoriteState: FavoritesState[] = [];

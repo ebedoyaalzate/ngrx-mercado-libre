@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { deleteLogin } from 'src/app/store/actions/profile.actions';
+import { logout } from 'src/app/store/actions/profile.actions';
 import { selectProfileName } from 'src/app/store/selectors/profile.selectors';
 import { AppState } from 'src/app/store/state/app.state';
 
@@ -23,9 +23,8 @@ export class HeaderComponent {
 
   constructor(
     private router: Router,
-    private sessionService: SessionService,
     private store: Store<AppState>,
-  ) { 
+  ) {
     this.userName = this.store.select(selectProfileName)
   }
 
@@ -35,10 +34,9 @@ export class HeaderComponent {
 
   redirect(to: string) {
     if (!to) {
-      this.sessionService.removeToken()
+      this.store.dispatch(logout());
     }
     this.toggleMenu();
-    this.store.dispatch(deleteLogin())
     this.router.navigate([to]);
   }
 }

@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MockComponents } from 'ng-mocks';
-import { ProductComponent } from '../product/product.component';
 
+import { ProductComponent } from '../product/product.component';
 import { ProductListComponent } from './product-list.component';
 
 

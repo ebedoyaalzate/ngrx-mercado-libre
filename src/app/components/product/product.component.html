@@ -3,7 +3,7 @@
     <img mat-card-image [src]="product?.thumbnail" alt="Product thumbnail">
   </mat-card-title>
   <mat-card-content>
-    <h3>{{product?.title}}</h3>
+    <h3 class="text-ellipsis">{{product?.title}}</h3>
     <span>{{product?.price | currency}}$</span>
   </mat-card-content>
   <mat-card-actions fxLayout fxLayoutAlign="end center">
