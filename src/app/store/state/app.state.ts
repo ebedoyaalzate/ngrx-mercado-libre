@@ -4,7 +4,7 @@ import { initialProfileState } from './profile.state';
 
 export interface AppState {
   favorites: FavoritesState[];
-  profile: UserPayload | undefined;
+  profile: UserPayload;
 }
 
 export const initialAppState: AppState = {
