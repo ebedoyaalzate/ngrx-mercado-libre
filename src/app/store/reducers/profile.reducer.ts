@@ -13,6 +13,6 @@ const _profileReducer = createReducer(
   on(deleteLogin, () => initialProfileState)
 );
 
-export function profileReducer(state: UserPayload | undefined, action: Action):  UserPayload | undefined {
+export function profileReducer(state: UserPayload | undefined, action: Action):  UserPayload {
   return _profileReducer(state, action);
 }

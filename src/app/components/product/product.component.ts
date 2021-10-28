@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { take } from 'rxjs/operators';
 import { addFavorite, deleteFavorite } from 'src/app/store/actions/favorites.actions';
+import { selectFavorites } from 'src/app/store/selectors/favorites.selector';
 import { AppState } from 'src/app/store/state/app.state';
 import { ItemsService } from '../../services/items.service';
 
@@ -18,6 +20,12 @@ export class ProductComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.store.select(selectFavorites).pipe(take(1)).subscribe(res => {
+      this.product = {
+        ...this.product,
+        isSelected: !!res.find(item => this.product.id === item.id),
+      }
+    })
   }
 
   selectProduct() {

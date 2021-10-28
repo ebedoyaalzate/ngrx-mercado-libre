@@ -5,8 +5,8 @@ import { initialSearchState, SearchState } from './search.state';
 
 export interface AppState {
   favorites: FavoritesState[];
-  profile: UserPayload | undefined;
-  search: SearchState | undefined;
+  profile: UserPayload;
+  search: SearchState;
 }
 
 export const initialAppState: AppState = {
